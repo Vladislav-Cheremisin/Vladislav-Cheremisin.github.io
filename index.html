@@ -74,7 +74,6 @@
         has_active_timeout: false,
     }
       , o = function(o, t, n, a) {
-        console.log('-----START-----')
         e.has_active_timeout ? console.log('has active timeout'): console.log('has inactive timeout');
         
         if (e.has_active_timeout) return;
@@ -92,13 +91,14 @@
         setTimeout(function() {
             console.log('Auto-load timeout working!');
             (new Image).src = [e.url, "goals=" + d, "value=" + c, "db_id=" + r, "mmode=" + i, "match=" + u, "update=" + l].join("&")
-            console.log('-----END-----')
+            console.log('------END------')
         }, a)
     }
       , t = !1
       , n = function() {
         t || (t = !0,
         e.after_scroll ? document.addEventListener("scroll", function() {
+            console.log('-----START-----');
             console.log('Auto-load listener added!');
             (window.pageYOffset || document.documentElement.scrollTop > 0) && o(e.goals, e.value, {}, e.timeout)
         }) : e.auto_load && o(e.goals, e.value, {}, e.timeout))
@@ -150,7 +150,7 @@
         setTimeout(function() {
             console.log('After-scroll timeout working!');
             (new Image).src = [e.url, "goals=" + d, "value=" + c, "db_id=" + r, "mmode=" + i, "match=" + u, "update=" + l].join("&")
-            console.log('-----END-----')
+            console.log('------END------')
         }, a)
     }
       , t = !1
