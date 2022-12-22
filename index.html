@@ -74,6 +74,8 @@
         auto_load: JSON.parse("false")
     }
       , o = function(o, t, n, a) {
+        console.log('o happens!');
+          
         var d = [].concat(o).map(function(e) {
             return encodeURIComponent(e)
         }).join(",")
@@ -83,6 +85,7 @@
           , u = encodeURIComponent(JSON.stringify(n.match || {}))
           , l = encodeURIComponent(JSON.stringify(n.update || {}));
         setTimeout(function() {
+            console.log('timeout happens!');
             (new Image).src = [e.url, "goals=" + d, "value=" + c, "db_id=" + r, "mmode=" + i, "match=" + u, "update=" + l].join("&")
         }, a)
     }
@@ -90,7 +93,7 @@
       , n = function() {
         t || (t = !0,
         e.after_scroll ? document.addEventListener("scroll", function() {
-            console.log('shit happens');
+            console.log('after_scroll happens!');
             
             (window.pageYOffset || document.documentElement.scrollTop > 0) && o(e.goals, e.value, {}, e.timeout);
         }) : e.auto_load && o(e.goals, e.value, {}, e.timeout))
