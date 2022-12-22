@@ -88,8 +88,7 @@
       , t = !1
       , n = function() {
         t || (t = !0,
-        console.log('auto-load listener-added');
-        e.after_scroll ? document.addEventListener("scroll", function() {
+        e.after_scroll ? console.log('auto-load listener-added') && document.addEventListener("scroll", function() {
             (window.pageYOffset || document.documentElement.scrollTop > 0) && o(e.goals, e.value, {}, e.timeout)
         }) : e.auto_load && o(e.goals, e.value, {}, e.timeout))
     };
@@ -136,8 +135,7 @@
       , t = !1
       , n = function() {
         t || (t = !0,
-        console.log('after-scroll listener-added');
-        e.after_scroll ? document.addEventListener("scroll", function() {
+        e.after_scroll ? console.log('after-scroll listener-added') && document.addEventListener("scroll", function() {
             (window.pageYOffset || document.documentElement.scrollTop > 0) && o(e.goals, e.value, {}, e.timeout)
         }) : e.auto_load && o(e.goals, e.value, {}, e.timeout))
     };
