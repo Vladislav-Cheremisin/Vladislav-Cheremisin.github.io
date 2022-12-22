@@ -59,9 +59,9 @@
         console.log(e); // Или записать ошибку в консоль браузера
         }
     });
-</script>
-
-<!-- START OF ALTCRAFT PIXEL CODE AUTO-LOAD!-->
+</script>    
+    
+<!-- START OF ALTCRAFT PIXEL CODE AUTOLOAD 5 SEC DEFAULT !-->
 <script type="text/javascript">
 !function() {
     var e = {
@@ -70,17 +70,9 @@
         value: parseFloat("0"),
         timeout: parseInt("5000"),
         after_scroll: JSON.parse("false"),
-        auto_load: JSON.parse("true"),
-        has_active_timeout: false,
+        auto_load: JSON.parse("true")
     }
       , o = function(o, t, n, a) {
-        console.log('-----START-----');
-        e.has_active_timeout ? console.log('has active timeout'): console.log('has inactive timeout');
-        
-        if (e.has_active_timeout) return;
-        
-        console.log('o-function working!');
-        
         var d = [].concat(o).map(function(e) {
             return encodeURIComponent(e)
         }).join(",")
@@ -90,16 +82,14 @@
           , u = encodeURIComponent(JSON.stringify(n.match || {}))
           , l = encodeURIComponent(JSON.stringify(n.update || {}));
         setTimeout(function() {
-            console.log('Auto-load timeout working!');
             (new Image).src = [e.url, "goals=" + d, "value=" + c, "db_id=" + r, "mmode=" + i, "match=" + u, "update=" + l].join("&")
-            console.log('------END------')
         }, a)
     }
       , t = !1
       , n = function() {
         t || (t = !0,
+        console.log('auto-load listener-added');
         e.after_scroll ? document.addEventListener("scroll", function() {
-            console.log('Auto-load listener added!');
             (window.pageYOffset || document.documentElement.scrollTop > 0) && o(e.goals, e.value, {}, e.timeout)
         }) : e.auto_load && o(e.goals, e.value, {}, e.timeout))
     };
@@ -118,26 +108,19 @@
 </script>
 <!-- END OF ALTCRAFT PIXEL CODE !-->
     
-<!-- START OF ALTCRAFT PIXEL CODE AFTER-SCROLL !-->
+    
+<!-- START OF ALTCRAFT PIXEL CODE AFTERSCROLL 5 SEC DEFAULT !-->
 <script type="text/javascript">
-!function() {
+    !function() {
     var e = {
         url: "https://pxl.vladislav-cheremisin.dev.altkraft.com/pixel?k=34FyFph%2BVuwG8CNaE2Y5w9k7Jg3MJUl1m%2Fqui6fGQJa6XD9SM9jghQ%3D%3D&s=jKy%2BrzwSSnk%3D",
         goals: "",
         value: parseFloat("0"),
         timeout: parseInt("5000"),
         after_scroll: JSON.parse("true"),
-        auto_load: JSON.parse("false"),
-        has_active_timeout: false,
+        auto_load: JSON.parse("false")
     }
       , o = function(o, t, n, a) {
-        e.has_active_timeout ? console.log('has active timeout'): console.log('has inactive timeout');
-        e.has_active_timeout = true;
-        
-        if (e.has_active_timeout) return;
-        
-        console.log('o-function working!');
-        
         var d = [].concat(o).map(function(e) {
             return encodeURIComponent(e)
         }).join(",")
@@ -147,17 +130,14 @@
           , u = encodeURIComponent(JSON.stringify(n.match || {}))
           , l = encodeURIComponent(JSON.stringify(n.update || {}));
         setTimeout(function() {
-            console.log('After-scroll timeout working!');
             (new Image).src = [e.url, "goals=" + d, "value=" + c, "db_id=" + r, "mmode=" + i, "match=" + u, "update=" + l].join("&")
-            console.log('------END------')
         }, a)
     }
       , t = !1
       , n = function() {
         t || (t = !0,
+        console.log('after-scroll listener-added');
         e.after_scroll ? document.addEventListener("scroll", function() {
-            console.log('-----START-----')
-            console.log('After-scroll listener added!');
             (window.pageYOffset || document.documentElement.scrollTop > 0) && o(e.goals, e.value, {}, e.timeout)
         }) : e.auto_load && o(e.goals, e.value, {}, e.timeout))
     };
