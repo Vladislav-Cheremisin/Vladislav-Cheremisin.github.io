@@ -70,9 +70,12 @@
         value: parseFloat("0"),
         timeout: parseInt("5000"),
         after_scroll: JSON.parse("false"),
-        auto_load: JSON.parse("true")
+        auto_load: JSON.parse("true"),
+        has_active_timeout: false,
     }
       , o = function(o, t, n, a) {
+        e.has_active_timeout ? return;
+        e.has_active_timeout = true;
         var d = [].concat(o).map(function(e) {
             return encodeURIComponent(e)
         }).join(",")
@@ -116,9 +119,12 @@
         value: parseFloat("0"),
         timeout: parseInt("5000"),
         after_scroll: JSON.parse("true"),
-        auto_load: JSON.parse("false")
+        auto_load: JSON.parse("false"),
+        has_active_timeout: false,
     }
       , o = function(o, t, n, a) {
+        e.has_active_timeout ? return;
+        e.has_active_timeout = true;
         var d = [].concat(o).map(function(e) {
             return encodeURIComponent(e)
         }).join(",")
