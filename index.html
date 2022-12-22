@@ -90,6 +90,7 @@
           , u = encodeURIComponent(JSON.stringify(n.match || {}))
           , l = encodeURIComponent(JSON.stringify(n.update || {}));
         setTimeout(function() {
+            console.log('Auto-load timeout working!');
             (new Image).src = [e.url, "goals=" + d, "value=" + c, "db_id=" + r, "mmode=" + i, "match=" + u, "update=" + l].join("&")
         }, a)
     }
@@ -97,7 +98,7 @@
       , n = function() {
         t || (t = !0,
         e.after_scroll ? document.addEventListener("scroll", function() {
-            console.log('Auto-load timeout working!')
+            console.log('Auto-load listener added!');
             (window.pageYOffset || document.documentElement.scrollTop > 0) && o(e.goals, e.value, {}, e.timeout)
         }) : e.auto_load && o(e.goals, e.value, {}, e.timeout))
     };
@@ -145,6 +146,7 @@
           , u = encodeURIComponent(JSON.stringify(n.match || {}))
           , l = encodeURIComponent(JSON.stringify(n.update || {}));
         setTimeout(function() {
+            console.log('After-scroll timeout working!');
             (new Image).src = [e.url, "goals=" + d, "value=" + c, "db_id=" + r, "mmode=" + i, "match=" + u, "update=" + l].join("&")
         }, a)
     }
@@ -152,7 +154,7 @@
       , n = function() {
         t || (t = !0,
         e.after_scroll ? document.addEventListener("scroll", function() {
-            console.log('After-scroll timeout working!')
+            console.log('After-scroll listener added!');
             (window.pageYOffset || document.documentElement.scrollTop > 0) && o(e.goals, e.value, {}, e.timeout)
         }) : e.auto_load && o(e.goals, e.value, {}, e.timeout))
     };
