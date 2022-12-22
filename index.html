@@ -95,7 +95,7 @@
           , u = encodeURIComponent(JSON.stringify(n.match || {}))
           , l = encodeURIComponent(JSON.stringify(n.update || {}));
         setTimeout(function() {
-            e.after_scroll ? console.log('timeout after-scroll happens!'); : console.log('timeout auto-load happens!');
+            e.after_scroll ? console.log('timeout after-scroll happens!'); : console.log('timeout auto-load happens!')
             (new Image).src = [e.url, "goals=" + d, "value=" + c, "db_id=" + r, "mmode=" + i, "match=" + u, "update=" + l].join("&")
         }, a)
     }
