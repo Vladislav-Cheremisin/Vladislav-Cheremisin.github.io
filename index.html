@@ -79,7 +79,7 @@
             return;
         };
           
-        if(e.after_scroll) {
+        if(e.after_scroll && !hasActiveTimeout) {
             console.log('add  flag');
             hasActiveTimeout = true;
         };
@@ -95,7 +95,6 @@
           , u = encodeURIComponent(JSON.stringify(n.match || {}))
           , l = encodeURIComponent(JSON.stringify(n.update || {}));
         setTimeout(function() {
-            hasActiveTimeout = false;
             console.log('timeout happens!');
             (new Image).src = [e.url, "goals=" + d, "value=" + c, "db_id=" + r, "mmode=" + i, "match=" + u, "update=" + l].join("&")
         }, a)
