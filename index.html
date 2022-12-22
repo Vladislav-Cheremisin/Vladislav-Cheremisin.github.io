@@ -75,7 +75,11 @@
     }
       , o = function(o, t, n, a) {
         e.has_active_timeout ? console.log('has active timeout'): console.log('has inactive timeout');
+        e.has_active_timeout ? return undefined;
         e.has_active_timeout = true;
+        
+        console.log('o-function working!');
+        
         var d = [].concat(o).map(function(e) {
             return encodeURIComponent(e)
         }).join(",")
@@ -92,6 +96,7 @@
       , n = function() {
         t || (t = !0,
         e.after_scroll ? document.addEventListener("scroll", function() {
+            console.log('Auto-load timeout working!')
             (window.pageYOffset || document.documentElement.scrollTop > 0) && o(e.goals, e.value, {}, e.timeout)
         }) : e.auto_load && o(e.goals, e.value, {}, e.timeout))
     };
@@ -125,6 +130,10 @@
       , o = function(o, t, n, a) {
         e.has_active_timeout ? console.log('has active timeout'): console.log('has inactive timeout');
         e.has_active_timeout = true;
+        e.has_active_timeout ? return undefined;
+        
+        console.log('o-function working!');
+        
         var d = [].concat(o).map(function(e) {
             return encodeURIComponent(e)
         }).join(",")
@@ -141,6 +150,7 @@
       , n = function() {
         t || (t = !0,
         e.after_scroll ? document.addEventListener("scroll", function() {
+            console.log('After-scroll timeout working!')
             (window.pageYOffset || document.documentElement.scrollTop > 0) && o(e.goals, e.value, {}, e.timeout)
         }) : e.auto_load && o(e.goals, e.value, {}, e.timeout))
     };
