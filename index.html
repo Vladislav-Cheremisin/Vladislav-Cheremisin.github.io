@@ -76,7 +76,8 @@
       , o = function(o, t, n, a) {
         e.has_active_timeout ? console.log('has active timeout'): console.log('has inactive timeout');
         e.has_active_timeout ? return undefined;
-        e.has_active_timeout = true;
+        
+        if (e.has_active_timeout) return;
         
         console.log('o-function working!');
         
@@ -130,7 +131,8 @@
       , o = function(o, t, n, a) {
         e.has_active_timeout ? console.log('has active timeout'): console.log('has inactive timeout');
         e.has_active_timeout = true;
-        e.has_active_timeout ? return undefined;
+        
+        if (e.has_active_timeout) return;
         
         console.log('o-function working!');
         
