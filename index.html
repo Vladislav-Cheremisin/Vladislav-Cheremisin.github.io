@@ -79,7 +79,11 @@
             return;
         };
           
-        hasActiveTimeout = true;
+        if(e.after_scroll) {
+            console.log('add  flag');
+            hasActiveTimeout = true;
+        };
+          
         console.log('o happens!');
           
         var d = [].concat(o).map(function(e) {
