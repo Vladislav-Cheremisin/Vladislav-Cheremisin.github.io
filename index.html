@@ -48,6 +48,11 @@
     <h1>Something for scroll</h1>
     <h1>Something for scroll</h1>
 <script>
+    let counter = 0;
+    setInterval(() => {
+        console.log(counter);
+        counter++;
+    }, 1000)
 
     document.getElementById('init_sub').addEventListener('click', function() { // По клику на кнопку..
     try {
